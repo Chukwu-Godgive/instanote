@@ -1,0 +1,25 @@
+{
+  "name": "instanote",
+  "version": "1.0.0",
+  "description": "InstaNote app that helps you write and store your notes in one place",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chukwu-Godgive/instanote.git"
+  },
+  "author": "Chukwu Godgive, Bede Kelechi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chukwu-Godgive/instanote/issues"
+  },
+  "homepage": "https://github.com/Chukwu-Godgive/instanote#readme",
+  "dependencies": {
+    "cores": "^0.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^7.4.4"
+  }
+}
