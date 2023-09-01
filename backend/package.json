@@ -7,17 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Chukwu-Godgive/instanote.git"
-  },
+  "repository": "git+https://github.com/Chukwu-Godgive/instanote.git",
   "author": "Chukwu Godgive, Bede Kelechi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Chukwu-Godgive/instanote/issues"
   },
   "homepage": "https://github.com/Chukwu-Godgive/instanote#readme",
-  "node": "18.16.0",
+  "engines": {
+    "node": ">=14.20.1"
+  },
   "dependencies": {
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
