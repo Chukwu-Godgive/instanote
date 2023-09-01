@@ -52,7 +52,7 @@ app.route("/api/user").post((req, res) => {
   getUser
     .save()
     .then(res.send({ message: "Ok" }))
-    .catch((err) => res.send({ error: err }));
+    .catch((err) => res.json({ error: err }));
 });
 
 // User sub routes using chained method
@@ -60,18 +60,18 @@ app
   .route("/api/user/:email")
   .get((req, res) => {
     User.findOne({ email: req.params.email })
-      .then((user) => res.send(user))
-      .catch((err) => res.send({ error: err }));
+      .then((user) => res.json(user))
+      .catch((err) => res.json({ error: err }));
   })
   .patch((req, res) => {
     User.updateOne({ email: req.params.email }, { $set: req.body })
-      .then((user) => res.send({ updated: user }))
-      .catch((err) => res.send({ error: err }));
+      .then((user) => res.json({ updated: user }))
+      .catch((err) => res.json({ error: err }));
   })
   .delete((req, res) => {
     User.deleteOne({ email: req.params.email })
-      .then((user) => res.send({ deleted: user }))
-      .catch((err) => res.send({ error: err }));
+      .then((user) => res.json({ deleted: user }))
+      .catch((err) => res.json({ error: err }));
   });
 
 // Note main routes using chained method
@@ -85,7 +85,7 @@ app.route("/api/note").post((req, res) => {
   getNote
     .save()
     .then(res.send({ message: "Ok" }))
-    .catch((err) => res.send({ error: err }));
+    .catch((err) => res.json({ error: err }));
 });
 
 // Note sub routes using chained method
@@ -93,18 +93,18 @@ app
   .route("/api/note/:_id")
   .get((req, res) => {
     Note.findOne({ _id: req.params._id })
-      .then((notes) => res.send(notes))
-      .catch((err) => res.send({ error: err }));
+      .then((notes) => res.json(notes))
+      .catch((err) => res.json({ error: err }));
   })
   .patch((req, res) => {
     Note.updateOne({ _id: req.params._id }, { $set: req.body })
-      .then((note) => res.send({ updated: note }))
-      .catch((err) => res.send({ error: err }));
+      .then((note) => res.json({ updated: note }))
+      .catch((err) => res.json({ error: err }));
   })
   .delete((req, res) => {
     Note.deleteOne({ _id: req.params._id })
-      .then((note) => res.send({ deleted: note }))
-      .catch((err) => res.send({ error: err }));
+      .then((note) => res.json({ deleted: note }))
+      .catch((err) => res.json({ error: err }));
   });
 
 // Notes sub-sub routes using chained method
@@ -112,17 +112,17 @@ app
   .route("/api/notes/:user_id")
   .get((req, res) => {
     Note.find({ user_id: req.params.user_id })
-      .then((notes) => res.send(notes))
-      .catch((err) => res.send({ error: err }));
+      .then((notes) => res.json(notes))
+      .catch((err) => res.json({ error: err }));
   })
   .delete((req, res) => {
     Note.deleteMany({ user_id: req.params.user_id })
-      .then((notes) => res.send({ deleted: notes }))
-      .catch((err) => res.send({ error: err }));
+      .then((notes) => res.json({ deleted: notes }))
+      .catch((err) => res.json({ error: err }));
   });
 /** API routes end */
 
 // Port
 app.listen(process.env.PORT || process.env.LOCAL_PORT, () => {
-  console.log("Server running on port 5000");
+  console.log("Server is up");
 });

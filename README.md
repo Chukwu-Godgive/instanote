@@ -16,12 +16,12 @@ Push to frontend or backend branch.
 These are the things you can do with the api
 
 
-### Users
+### <u>Users</u>
 
 #### https://instanote.onrender.com/api/user
 • Make a Post request
 
-#### https://instanote.onrender.com/api/user/:email
+#### https://instanote.onrender.com/api/user/<email>
 • Make a Get request
 
 • Make an Update request
@@ -29,21 +29,24 @@ These are the things you can do with the api
 • Make a Delete request
 
 
-### Note
+### <u>Note</u>
 
 #### https://instanote.onrender.com/api/note
 • Make a Post request
 
-#### https://instanote.onrender.com/api/note/:_id
+#### https://instanote.onrender.com/api/note/<_id>
 • Make a Get request
 
 • Make an Update request
 
 • Make a Delete request
 
-### Notes
+### <u>Notes</u>
 
-#### https://instanote.onrender.com/api/notes/:user_id
+#### https://instanote.onrender.com/api/notes/<user_id>
 • Make a Get request
 
 • Make a Delete request
+
+
+Note: Replace email, _id, and user_id with the necessary details for it to work!
