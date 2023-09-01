@@ -23,7 +23,9 @@ These are the things you can do with the api
 
 #### https://instanote.onrender.com/api/user/:email
 • Make a Get request
+
 • Make an Update request
+
 • Make a Delete request
 
 
@@ -34,11 +36,14 @@ These are the things you can do with the api
 
 #### https://instanote.onrender.com/api/note/:_id
 • Make a Get request
+
 • Make an Update request
+
 • Make a Delete request
 
 ### Notes
 
 #### https://instanote.onrender.com/api/notes/:user_id
 • Make a Get request
+
 • Make a Delete request
