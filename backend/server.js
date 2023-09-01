@@ -123,6 +123,6 @@ app
 /** API routes end */
 
 // Port
-app.listen(process.env.PORT || 5000, () => {
+app.listen(process.env.PORT || process.env.LOCAL_PORT, () => {
   console.log("Server running on port 5000");
 });

@@ -2,6 +2,8 @@
 
 Instant note app that helps you write and store your notes in one place.
 
+### [View Site](https://instanote.onrender.com)
+
 ### Contribution
 
 To contribute, first fork the project and solve the issue you found, then make a pull request.
@@ -16,10 +18,10 @@ These are the things you can do with the api
 
 ### Users
 
-#### /api/user
+#### https://instanote.onrender.com/api/user
 • Make a Post request
 
-#### /api/user/:email
+#### https://instanote.onrender.com/api/user/:email
 • Make a Get request
 • Make an Update request
 • Make a Delete request
@@ -27,16 +29,16 @@ These are the things you can do with the api
 
 ### Note
 
-#### /api/note
+#### https://instanote.onrender.com/api/note
 • Make a Post request
 
-#### /api/note/:_id
+#### https://instanote.onrender.com/api/note/:_id
 • Make a Get request
 • Make an Update request
 • Make a Delete request
 
 ### Notes
 
-#### /api/notes/:user_id
+#### https://instanote.onrender.com/api/notes/:user_id
 • Make a Get request
 • Make a Delete request
