@@ -1,0 +1,93 @@
+/* InstaNot */
+
+/* default settings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+.nav,
+.hero-section {
+  /* background-color: rgb(14, 14, 14); */
+  background-color: black;
+}
+
+/* reuseable design start */
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+/* reuseable design end */
+
+/* All Navbar start */
+.nav-contents {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  align-items: center;
+}
+
+.menus ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menus li {
+  list-style: none;
+  padding-left: 40px;
+}
+
+.menus a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.menus a:hover {
+  border-bottom: 1px solid orange;
+}
+/* All Navbar end */
+
+/* All Homepage start */
+.hero-box {
+  color: white;
+  padding: 120px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-title {
+  width: 30ch;
+  letter-spacing: 1.5px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.home-desc {
+  padding-top: 20px;
+}
+
+.hero-box Button:hover {
+  background-color: rgba(255, 166, 0, 0.945);
+}
+/* All Homepage end */
+
+/* 
+    Other pages designs can go here
+    Please remember to use this classNaming convention to avoid clash
+    e.g - if am working on About Page Title, i will be using something like
+     classNme="about-title"
+*/
+
+/* All Footer start */
+/* All Footer end */
