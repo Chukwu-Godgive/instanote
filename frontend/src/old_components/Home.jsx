@@ -1,10 +1,8 @@
 import React from "react";
-import noteBook from "../components/img/NoteBook.jpg"
+import noteBook from "../images/NoteBook.jpg"
 
 // import Form from "../components/Form"
 
-
-import Footer from "./Footer";
 
 export default function Home(props) {
     return <body>
@@ -34,7 +32,7 @@ export default function Home(props) {
      </section>
      
      <footer>
-                <Footer/>
+                {/* <Footer/> */}
             </footer>
         
     </body>
