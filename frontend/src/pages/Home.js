@@ -3,6 +3,19 @@ import React from "react";
 import HomeNavbar from "../components/Navbars/HomeNavbar";
 import HomeAsset from "../images/Home_Asset.png";
 import Button from "../components/GetStartedButton";
+import { Link } from "react-router-dom";
+
+// inline styles for Get started Home button
+const buttonStyle = {
+  border: "none",
+  backgroundColor: "orange",
+  padding: "15px 7.5px",
+  fontSize: "18px",
+  fontWeight: "600",
+  borderRadius: "8px",
+  margin: "50px 0 20px",
+  cursor: "pointer",
+};
 
 function Home() {
   return (
@@ -19,13 +32,26 @@ function Home() {
                 InstaNote app helps you write and store your notes in one place.
               </p>
 
-              {/* The button is passed down as a prop */}
-              <Button buttonName="Get Started" />
+              {/* The button is passed down as a props from GetStartedButton component*/}
+              <Link to="/signup"><Button style={buttonStyle} buttonName="Get Started"/></Link>
             </div>
 
             <div>
               <img src={HomeAsset} alt="instanote asset" />
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container">
+        <div className="home-main">
+          <h2 className="home-main-title">Why InstaNote</h2>
+          <div className="home-main-desc">
+            <p>
+              Note-taking has never been easier or more convenient. But with <span className="home-note-color">InstaNote</span> say goodbye to the clutter of physical notebooks and
+              embrace the future of digital note-taking.
+            </p>
+            <p className="home-main-desc-sub">Register today and start organizing your thoughts with ease.</p>
           </div>
         </div>
       </div>

@@ -46,7 +46,7 @@ These are the things you can do with the api
 #### https://instanote.onrender.com/api/notes/<user_id>
 • Make a Get request
 
-• Make a Delete request
+• Make a Delete request.
 
 
 Note: Replace email, _id, and user_id with the necessary details for it to work!

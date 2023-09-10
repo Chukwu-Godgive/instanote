@@ -77,10 +77,105 @@ body {
   padding-top: 20px;
 }
 
+.home-main-title {
+  margin: 100px 0 50px;
+  text-align: center;
+}
+
+.home-main-desc {
+  text-align: center;
+  width: 55%;
+  margin: 0 auto 100px;
+  padding: 10px 0;
+  line-height: 1.5;
+  border-top: 2px solid seagreen;
+  border-bottom: 2px solid seagreen;
+}
+
+.home-note-color {
+  background-color: lightcyan;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.home-main-desc-sub {
+  margin-top: 10px;
+  text-align: center;
+}
+
 .hero-box Button:hover {
   background-color: rgba(255, 166, 0, 0.945);
 }
 /* All Homepage end */
+
+/* All Login page start */
+.login-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.login-form a {
+  text-decoration: none;
+  color: blue;
+  cursor: pointer;
+}
+
+.login-welcome {
+  margin-bottom: 40px;
+  line-height: 2;
+}
+
+.sub-login {
+  margin: 100px auto;
+  width: fit-content;
+  line-height: 1.5;
+}
+
+.login-label {
+  font-weight: 600;
+}
+
+.sub-login-input {
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+  border: 2px solid lightgrey;
+  outline: none;
+}
+
+.sub-login-input:focus {
+  border: none;
+  outline: 2px solid lightseagreen;
+}
+
+.login-settings {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.login-settings a{
+  margin-left: 2rem;
+}
+
+.login-option {
+  padding: 0 50px;
+
+}
+
+.login-option hr{
+  transform: rotate(90deg);
+  margin: 25px 0;
+}
+
+.login-social-button {
+  display: flex;
+}
+/* All Login page end */
 
 /* 
     Other pages designs can go here
