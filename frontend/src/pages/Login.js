@@ -7,6 +7,7 @@ import {
   FacebookLoginButton,
   TwitterLoginButton,
 } from "react-social-login-buttons";
+import Footer from "../components/Footer";
 
 // inline styles for login button
 const goToHomeStyle = {
@@ -109,6 +110,7 @@ function Login() {
           </form>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

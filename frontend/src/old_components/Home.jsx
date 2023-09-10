@@ -1,5 +1,6 @@
 import React from "react";
 import noteBook from "../images/NoteBook.jpg"
+import Footer from "../components/Footer";
 
 // import Form from "../components/Form"
 
