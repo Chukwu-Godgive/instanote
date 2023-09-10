@@ -4,9 +4,11 @@ import HomeNavbar from "../components/Navbars/HomeNavbar";
 import HomeAsset from "../images/Home_Asset.png";
 import Button from "../components/GetStartedButton";
 
+
 function Home() {
   return (
     <div>
+   
       <HomeNavbar />
       <div className="hero-section">
         <div className="container">
