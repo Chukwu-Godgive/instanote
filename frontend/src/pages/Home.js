@@ -4,6 +4,7 @@ import HomeNavbar from "../components/Navbars/HomeNavbar";
 import HomeAsset from "../images/Home_Asset.png";
 import Button from "../components/GetStartedButton";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 // inline styles for Get started Home button
 const buttonStyle = {
@@ -57,7 +58,7 @@ function Home() {
           </div>
         </div>
       </div>
-      {/* Footer goes here */}
+      <Footer/>
     </div>
   );
 }

@@ -247,4 +247,22 @@ button[type="submit"]:hover {
 */
 
 /* All Footer start */
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Style for the text inside the footer */
+.footer-content {
+  font-size: 16px;
+}
+
+
+
+
+
+
 /* All Footer end */

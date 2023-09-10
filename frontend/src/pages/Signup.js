@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Footer from '../components/Footer';
 
 
 function RegistrationForm() {
@@ -16,10 +17,10 @@ function RegistrationForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here
+    // Add form submission logic here
   };
 
-  return (
+  return ( <div>
     <div className="registration-form">
       <h2>Registration</h2>
       <form onSubmit={handleSubmit}>
@@ -69,7 +70,9 @@ function RegistrationForm() {
         </div>
         <button type="submit">Register</button>
       </form>
+      
     </div>
+    <Footer/> </div>
   );
 }
 
