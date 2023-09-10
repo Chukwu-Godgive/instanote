@@ -126,7 +126,7 @@ body {
 }
 
 .sub-login {
-  margin: 100px auto;
+  margin: 50px auto 100px;
   width: fit-content;
   line-height: 1.5;
 }
@@ -158,16 +158,15 @@ body {
   margin-bottom: 10px;
 }
 
-.login-settings a{
+.login-settings a {
   margin-left: 2rem;
 }
 
 .login-option {
   padding: 0 50px;
-
 }
 
-.login-option hr{
+.login-option hr {
   transform: rotate(90deg);
   margin: 25px 0;
 }
@@ -177,12 +176,11 @@ body {
 }
 /* All Login page end */
 
-
 /*sign-up form */
 
 .registration-form {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -221,7 +219,7 @@ body {
 .form-group input[type="email"]:focus,
 .form-group input[type="password"]:focus {
   outline: none;
-  border-color: #275b44; 
+  border-color: #275b44;
 }
 
 button[type="submit"] {
@@ -236,7 +234,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #54860d; 
+  background-color: #54860d;
 }
 
 /* 
@@ -247,4 +245,17 @@ button[type="submit"]:hover {
 */
 
 /* All Footer start */
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Style for the text inside the footer */
+.footer-content {
+  font-size: 16px;
+}
+
 /* All Footer end */
