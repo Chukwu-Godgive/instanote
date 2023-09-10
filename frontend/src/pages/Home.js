@@ -17,9 +17,11 @@ const buttonStyle = {
   cursor: "pointer",
 };
 
+
 function Home() {
   return (
     <div>
+   
       <HomeNavbar />
       <div className="hero-section">
         <div className="container">
