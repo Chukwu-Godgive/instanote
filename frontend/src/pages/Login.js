@@ -7,6 +7,7 @@ import {
   FacebookLoginButton,
   TwitterLoginButton,
 } from "react-social-login-buttons";
+import GeneralNavbar from "../components/Navbars/GeneralNavbar";
 
 // inline styles for login button
 const goToHomeStyle = {
@@ -38,13 +39,13 @@ const loginButtonStyle = {
 function Login() {
   return (
     <div className="login">
-      {/* <GeneralNavbar/> */}
+      <GeneralNavbar/>
       <div className="container">
         <div className="sub-login">
           {/* Go to Home button, This button is passed down as a props from 
             GetStartedButton component
           */}
-          <GoToHome style={goToHomeStyle} buttonName="⬅ Goto Home" />
+          <Link to="/"><GoToHome style={goToHomeStyle} buttonName="⬅ Goto Home" /></Link>
 
           <div className="login-welcome">
             <h3>Welcome back</h3>
