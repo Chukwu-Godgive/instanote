@@ -18,10 +18,10 @@ These are the things you can do with the api
 
 ### <u>Users</u>
 
-#### https://instanote.onrender.com/api/user
+#### https://instanoteserver.onrender.com/api/user
 • Make a Post request
 
-#### https://instanote.onrender.com/api/user/<email>
+#### https://instanoteserver.onrender.com/api/user/<email>
 • Make a Get request
 
 • Make an Update request
@@ -31,10 +31,10 @@ These are the things you can do with the api
 
 ### <u>Note</u>
 
-#### https://instanote.onrender.com/api/note
+#### https://instanoteserver.onrender.com/api/note
 • Make a Post request
 
-#### https://instanote.onrender.com/api/note/<_id>
+#### https://instanoteserver.onrender.com/api/note/<_id>
 • Make a Get request
 
 • Make an Update request
@@ -43,10 +43,10 @@ These are the things you can do with the api
 
 ### <u>Notes</u>
 
-#### https://instanote.onrender.com/api/notes/<user_id>
+#### https://instanoteserver.onrender.com/api/notes/<user_id>
 • Make a Get request
 
-• Make a Delete request.
+• Make a Delete request
 
 
 Note: Replace email, _id, and user_id with the necessary details for it to work!

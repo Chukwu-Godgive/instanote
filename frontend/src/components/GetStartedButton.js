@@ -2,9 +2,7 @@
 import React from "react";
 
 function GetStartedButton(props) {
-  return (
-      <button style={props.style}>{props.buttonName}</button>
-  );
+  return <button style={props.style}>{props.buttonName}</button>;
 }
 
 export default GetStartedButton;

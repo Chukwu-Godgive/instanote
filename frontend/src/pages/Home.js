@@ -18,11 +18,9 @@ const buttonStyle = {
   cursor: "pointer",
 };
 
-
 function Home() {
   return (
     <div>
-   
       <HomeNavbar />
       <div className="hero-section">
         <div className="container">
@@ -36,7 +34,9 @@ function Home() {
               </p>
 
               {/* The button is passed down as a props from GetStartedButton component*/}
-              <Link to="/signup"><Button style={buttonStyle} buttonName="Get Started"/></Link>
+              <Link to="/signup">
+                <Button style={buttonStyle} buttonName="Get Started" />
+              </Link>
             </div>
 
             <div>
@@ -51,14 +51,18 @@ function Home() {
           <h2 className="home-main-title">Why InstaNote</h2>
           <div className="home-main-desc">
             <p>
-              Note-taking has never been easier or more convenient. But with <span className="home-note-color">InstaNote</span> say goodbye to the clutter of physical notebooks and
-              embrace the future of digital note-taking.
+              Note-taking has never been easier or more convenient. But with{" "}
+              <span className="home-note-color">InstaNote</span> say goodbye to
+              the clutter of physical notebooks and embrace the future of
+              digital note-taking.
             </p>
-            <p className="home-main-desc-sub">Register today and start organizing your thoughts with ease.</p>
+            <p className="home-main-desc-sub">
+              Register today and start organizing your thoughts with ease.
+            </p>
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
