@@ -17,7 +17,7 @@ function GeneralNavbar(props) {
       <div className="container">
         <div className="nav-contents">
           <div style={logo}>
-            <Link to="/">
+            <Link to={props.pageDirectory}>
               <img style={logoStyle} src={InstaNoteLogo} alt="instanote logo" />
             </Link>
           </div>
@@ -27,7 +27,7 @@ function GeneralNavbar(props) {
                 <Link to="/dashboard">{props.name_1}</Link>
               </li>
               <li>
-                <Link to="/write">{props.name_2}</Link>
+                <Link to="/writenote">{props.name_2}</Link>
               </li>
             </ul>
           </div>

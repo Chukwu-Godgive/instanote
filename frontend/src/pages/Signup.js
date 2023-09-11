@@ -37,7 +37,7 @@ function RegistrationForm() {
 
   return (
     <div>
-      <GeneralNavbar />
+      <GeneralNavbar pageDirectory="/" />
       <div className="container">
         <Link to="/">
           <GoToHome style={goToHomeStyle} buttonName="⬅ Goto Home" />

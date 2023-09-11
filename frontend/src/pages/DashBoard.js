@@ -55,10 +55,15 @@ const noteBoardAction = {
   cursor: "pointer",
 };
 
+const addNoteSize = {
+  width: "fit-content",
+  margin: "0 auto",
+};
+
 function Dashboard() {
   return (
     <div className="dashboard">
-      <GeneralNavbar name_1="Notes" name_2="Write" />
+      <GeneralNavbar pageDirectory="/dashboard" name_1="Notes" name_2="Write" />
       <div className="container">
         {/* We will use conditioning to determine if notes is available or not to know the design to display.
          */}
@@ -66,13 +71,16 @@ function Dashboard() {
           <div className="dashboard-notice">
             <Notice message="Your notes will appear here when you create it." />
           </div>
-
-          <AddNoteButton />
+          <div style={addNoteSize}>
+            <Link to="/writenote">
+              <AddNoteButton />
+            </Link>
+          </div>
         </div>
 
         <div className="notes-available">
           <div>
-            <Link style={addNoteButton} to="/write">
+            <Link style={addNoteButton} to="/writenote">
               <AddNoteButton />
             </Link>
           </div>

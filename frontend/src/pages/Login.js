@@ -40,7 +40,7 @@ const loginButtonStyle = {
 function Login() {
   return (
     <div className="login">
-      <GeneralNavbar />
+      <GeneralNavbar pageDirectory="/" />
       <div className="container">
         {/* Go to Home button, This button is passed down as a props from 
             GetStartedButton component
