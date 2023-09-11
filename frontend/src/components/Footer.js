@@ -17,7 +17,7 @@ function Footer() {
   return (
     <footer>
       <div className="footer-content">
-        <p> &copy; {currentYear} instaNote</p>
+        <p> &copy; {currentYear} InstaNote</p>
       </div>
     </footer>
   );
