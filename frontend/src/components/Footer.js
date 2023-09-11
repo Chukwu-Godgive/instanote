@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function Footer() {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
@@ -7,10 +7,10 @@ function Footer() {
     // Update the currentYear state every year
     const interval = setInterval(() => {
       setCurrentYear(new Date().getFullYear());
-    }); 
+    });
 
     return () => {
-      clearInterval(interval); 
+      clearInterval(interval);
     };
   }, []);
 

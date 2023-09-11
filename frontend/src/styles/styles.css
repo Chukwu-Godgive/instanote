@@ -11,6 +11,8 @@ body {
   font-size: 18px;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
+  background-color: white;
+  color: rgb(12, 12, 12);
 }
 .nav,
 .hero-section {
@@ -236,6 +238,32 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #54860d;
 }
+
+/* All Dashboard start */
+.notes-unavailable {
+  min-height: 75vh;
+}
+
+.dashboard-notice {
+  margin: 50px auto 100px;
+}
+
+.dashboard-button {
+  margin: 50px auto;
+}
+
+.notes-unavailable a {
+  text-decoration: none;
+}
+
+.list-of-notes {
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 75vh;
+}
+/* All Dashboard end */
 
 /* 
     Other pages designs can go here

@@ -11,7 +11,7 @@ const logoStyle = {
   width: "150px",
 };
 
-function GeneralNavbar() {
+function GeneralNavbar(props) {
   return (
     <div className="nav">
       <div className="container">
@@ -21,16 +21,16 @@ function GeneralNavbar() {
               <img style={logoStyle} src={InstaNoteLogo} alt="instanote logo" />
             </Link>
           </div>
-          {/* <div className="menus">
+          <div className="menus">
             <ul>
               <li>
-                <Link to="/login">Login</Link>
+                <Link to="/dashboard">{props.name_1}</Link>
               </li>
               <li>
-                <Link to="/signup">Signup</Link>
+                <Link to="/write">{props.name_2}</Link>
               </li>
             </ul>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
