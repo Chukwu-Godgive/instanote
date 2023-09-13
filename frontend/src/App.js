@@ -16,6 +16,7 @@ function App() {
       <Route exact path="/dashboard" element={<Dashboard />} />
       <Route exact path="/writenote" element={<WriteNote />} />
 
+
       {/* After building login page then we can import
             and uncomment below code ⬇
         */}
