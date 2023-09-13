@@ -42,7 +42,7 @@ const Note = mongoose.model("note", userNoteSchema);
 
 /** API routes start */
 // User main routes using chained method
-app.route("api/user").post((req, res) => {
+app.route("/api/user").post((req, res) => {
   const getUser = User({
     username: req.body.username,
     email: req.body.email,
@@ -57,7 +57,7 @@ app.route("api/user").post((req, res) => {
 
 // User sub routes using chained method
 app
-  .route("api/user/:email")
+  .route("/api/user/:email")
   .get((req, res) => {
     User.findOne({ email: req.params.email })
       .then((user) => res.json(user))
@@ -75,7 +75,7 @@ app
   });
 
 // Note main routes using chained method
-app.route("api/note").post((req, res) => {
+app.route("/api/note").post((req, res) => {
   const getNote = Note({
     title: req.body.title,
     body: req.body.body,
@@ -90,7 +90,7 @@ app.route("api/note").post((req, res) => {
 
 // Note sub routes using chained method
 app
-  .route("api/note/:_id")
+  .route("/api/note/:_id")
   .get((req, res) => {
     Note.findOne({ _id: req.params._id })
       .then((notes) => res.json(notes))
@@ -109,7 +109,7 @@ app
 
 // Notes sub-sub routes using chained method
 app
-  .route("api/notes/:user_id")
+  .route("/api/notes/:user_id")
   .get((req, res) => {
     Note.find({ user_id: req.params.user_id })
       .then((notes) => res.json(notes))
