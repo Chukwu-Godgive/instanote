@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import Footer from "../components/Footer";
 import GeneralNavbar from "../components/Navbars/GeneralNavbar";
+import CustomButton from "../components/CustomButton";
+
+
+
 
 function WriteNote() {
   //state variables to store the title and content of the note
@@ -32,8 +36,9 @@ function WriteNote() {
             onChange={(event) => setContent(event.target.value)}
           />
         </div>
-        <button onClick={handleSave}>Save</button>
+        <button style={CustomButton} onClick={handleSave}>Save</button>
       </div>
+     
       <Footer />
     </div>
   );
