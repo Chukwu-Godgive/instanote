@@ -92,6 +92,12 @@ function RegistrationForm() {
             <button type="submit">Register</button>
           </form>
         </div>
+             <p className="signin-option">
+               Already have an account?
+                <span>
+                  <Link to="/login"> Login</Link>
+                </span>
+              </p>
       </div>
       <Footer />
     </div>
