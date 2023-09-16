@@ -6,6 +6,7 @@ const bodyParse = require("body-parser");
 const cors = require("cors");
 require("dotenv").config();
 const app = express();
+app.use(express.json());
 
 // Set app to use some of the dependencies at initial
 app.use(bodyParse.urlencoded({ extended: true }));
