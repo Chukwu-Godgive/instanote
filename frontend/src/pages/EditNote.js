@@ -45,7 +45,7 @@ function EditNote ({initialTitle, initialContent}){
             ) : (
                 <button style={CustomButton} onClick={() => setIsEditing(true)}>Edit</button>
             )}
-            <Link to="/editnote" />
+            <Link to="/editnote"/>
            
         </div>
     );

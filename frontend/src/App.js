@@ -5,6 +5,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import WriteNote from "./pages/WriteNote";
+import EditNote from "./pages/EditNote";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route exact path="/signup" element={<Signup />} />
       <Route exact path="/dashboard" element={<Dashboard />} />
       <Route exact path="/writenote" element={<WriteNote />} />
+      <Route exact path="/editnote" element={<EditNote />} />
 
 
       {/* After building login page then we can import
