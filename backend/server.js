@@ -29,25 +29,32 @@ const userSchema = new mongoose.Schema({
   username: String,
   email: String,
   password: String,
+  ref: String,
 });
 const User = mongoose.model("user", userSchema);
 
 // Database for User Notes
 const userNoteSchema = new mongoose.Schema({
+  date: String,
   title: String,
   body: String,
-  user_id: String,
+  ref: String,
 });
 const Note = mongoose.model("note", userNoteSchema);
 /** Database end */
 
 /** API routes start */
 // User main routes using chained method
-app.route("/api/user").post((req, res) => {
+const createUserRef =
+  Math.random().toString().slice(2, 7) +
+  Math.random().toString(36).slice(7, 12); // auto generate ids
+
+  app.route("/api/user").post((req, res) => {
   const getUser = User({
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
+    ref: createUserRef,
   });
   // saves the user inputs
   getUser
@@ -80,7 +87,6 @@ app.route("/api/note").post((req, res) => {
   const getNote = Note({
     title: req.body.title,
     body: req.body.body,
-    user_id: req.body.user_id,
   });
   // saves the user notes
   getNote
@@ -110,14 +116,14 @@ app
 
 // Notes sub-sub routes using chained method
 app
-  .route("/api/notes/:user_id")
+  .route("/api/notes/:ref")
   .get((req, res) => {
-    Note.find({ user_id: req.params.user_id })
+    Note.find({ ref: req.params.ref })
       .then((notes) => res.json(notes))
       .catch((err) => res.json({ error: err }));
   })
   .delete((req, res) => {
-    Note.deleteMany({ user_id: req.params.user_id })
+    Note.deleteMany({ ref: req.params.ref })
       .then((notes) => res.json({ deleted: notes }))
       .catch((err) => res.json({ error: err }));
   });

@@ -82,7 +82,7 @@ function Login() {
               // This stores the users detail to be accessed in the other pages
               sessionStorage.setItem(
                 "currentUser",
-                JSON.stringify(response.email)
+                JSON.stringify({ email: response.email, ref: response.ref })
               );
               window.location = "/dashboard";
             } else {

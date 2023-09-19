@@ -43,7 +43,7 @@ These are the things you can do with the api
 
 ### <u>Notes</u>
 
-#### https://instanoteserver.onrender.com/api/notes/<user_id>
+#### https://instanoteserver.onrender.com/api/notes/<ref>
 • Make a Get request
 
 • Make a Delete request

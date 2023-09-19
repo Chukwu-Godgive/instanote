@@ -66,14 +66,11 @@ function RegistrationForm() {
 
           // check between username and email, which one is in use
           if (userContent === null && getResponse.status === 200) {
-            const getUserId =
-              Math.random().toString().slice(2, 7) +
-              Math.random().toString(36).slice(7, 12); // auto generate ids
+            
             let neededFormData = {
               username: formData.username,
               email: formData.email,
               password: formData.password,
-              userId: getUserId,
             };
 
             // make a post request to the database
@@ -86,7 +83,7 @@ function RegistrationForm() {
                 // stores the user info for easy access
                 sessionStorage.setItem(
                   "currentUser",
-                  JSON.stringify(formData.email)
+                  JSON.stringify({ email: formData.email, ref: formData.ref })
                 ),
                 setFormData({
                   // resets the form

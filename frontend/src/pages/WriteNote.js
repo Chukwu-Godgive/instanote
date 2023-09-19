@@ -2,43 +2,72 @@ import React, { useState } from "react";
 import Footer from "../components/Footer";
 import GeneralNavbar from "../components/Navbars/GeneralNavbar";
 import CustomButton from "../components/CustomButton";
-
-
-
+import axios from "axios";
 
 function WriteNote() {
-  //state variables to store the title and content of the note
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const noteDate = new Date().toDateString(); // creates date
+  const userEmail = JSON.parse(sessionStorage.getItem("currentUser")); // gets user info locally
 
-  // function to handle saving note
-  const handleSave = () => {
-    // save logic here
+  //state variables to store the date, title, body, and user_id for the note
+  const [userInput, setUserInput] = useState({
+    date: noteDate,
+    title: "",
+    body: "",
+    ref: userEmail.ref,
+  });
+
+  // sets user inputs
+  const handleUserInput = (e) => {
+    const { name, value } = e.target;
+    setUserInput({
+      ...userInput,
+      [name]: value,
+    });
+  };
+
+  // handles note submit and saving
+  const handleSave = async (e) => {
+    e.preventDefault();
+    await axios
+      .post("https://instanoteserver.onrender.com/api/note", { userInput })
+      .then((noteResponse) => {
+        console.log(noteResponse.data)
+        console.log(userInput)
+      })
+      .catch((noteError) => {
+        console.log(noteError);
+      });
   };
 
   return (
     <div>
       <GeneralNavbar pageDirectory="/dashboard" name_1="Notes" name_2="Write" />
       <div className="writeNote-container">
-        <h1>Write a Note</h1>
-        <div>
-          <label>Title:</label>
-          <input
-            type="text"
-            value={title}
-            onChange={(event) => setTitle(event.target.value)}
-          />
-        </div>
-        <div>
-          <label>Content:</label>
-          <textarea
-            value={content}
-            onChange={(event) => setContent(event.target.value)}
-          />
-        </div>
-        <button style={CustomButton} onClick={handleSave}>Save</button>
+        <form onSubmit={handleSave}>
+          <h1>Write a Note</h1>
+          <div>
+            <label>Title:</label>
+            <input
+              type="text"
+              name="title"
+              autoComplete="off"
+              value={userInput.title}
+              onChange={handleUserInput}
+            />
+          </div>
+          <div>
+            <label>Content:</label>
+            <textarea
+              name="body"
+              autoComplete="off"
+              value={userInput.body}
+              onChange={handleUserInput}
+            />
+          </div>
+          <button style={CustomButton} type="submit">Save</button>
+        </form>
       </div>
-     
+
       <Footer />
     </div>
   );

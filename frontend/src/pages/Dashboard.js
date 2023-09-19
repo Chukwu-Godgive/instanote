@@ -90,7 +90,7 @@ function Dashboard() {
       ); // gets the user stored email during login
 
       await axios
-        .get("https://instanoteserver.onrender.com/api/user/" + currentUser)
+        .get("https://instanoteserver.onrender.com/api/user/" + currentUser.email)
         .then((userResponse) => {
           setGetUser(userResponse.data); // stores the received info to the getUser state
         })
@@ -104,7 +104,7 @@ function Dashboard() {
   // gets users note from database and stores it in userNotes state
   useEffect(() => {
     const getUserStoredNote = async () => {
-      let noteId = getUser._id;
+      let noteId = getUser.ref;
       await axios
         .get("https://instanoteserver.onrender.com/api/notes/" + noteId)
         .then((notesResponse) => {
@@ -117,6 +117,26 @@ function Dashboard() {
     getUserStoredNote(); // this runs the function within useEffect
   });
   // console.log(userNotes);
+
+  // handles note delete
+  const handleDelete = async (e) => {
+    const {name} = e.target;
+    console.log(name)
+    await axios
+      .delete("https://instanoteserver.onrender.com/api/note/" + name)
+      .then((deleted) => {
+        let del = deleted.data.deleted.deletedCount;
+        console.log(del)
+        if (del === 0) {
+          window.location = "/dashboard";
+        } else {
+          console.log("Try again")
+        }
+      })
+      .catch((deleteError) => {
+        console.log(deleteError);
+      });
+  }
 
   return (
     <div className="dashboard">
@@ -141,12 +161,12 @@ function Dashboard() {
           {userNotes.length ? (userNotes.map((note, idx) => (
             <div style={noteBoard} key={idx}>
 
-              <p style={noteDate}>12-30-2023</p>
+              <p style={noteDate}>{note.date}</p>
               <h3 style={noteTitle}>{note.title}</h3>
               <p style={noteBody}>{note.body}</p>
 
               <div style={action}>
-                <img style={noteBoardAction} src={Delete} alt="delete note" />
+                <img style={noteBoardAction} src={Delete} name={note._id} onClick={handleDelete} alt="delete note" />
               </div>
 
             </div>
