@@ -6,14 +6,14 @@ import axios from "axios";
 
 function WriteNote() {
   const noteDate = new Date().toDateString(); // creates date
-  const userEmail = JSON.parse(sessionStorage.getItem("currentUser")); // gets user info locally
+  const getUserLocal = JSON.parse(sessionStorage.getItem("currentUser")); // gets user info locally
 
   //state variables to store the date, title, body, and user_id for the note
   const [userInput, setUserInput] = useState({
     date: noteDate,
     title: "",
     body: "",
-    ref: userEmail.ref,
+    ref: getUserLocal.ref,
   });
 
   // sets user inputs
@@ -26,10 +26,11 @@ function WriteNote() {
   };
 
   // handles note submit and saving
+  
   const handleSave = async (e) => {
     e.preventDefault();
     await axios
-      .post("https://instanoteserver.onrender.com/api/note", { userInput })
+      .post("https://instanoteserver.onrender.com/api/note", userInput)
       .then((noteResponse) => {
         console.log(noteResponse.data)
         console.log(userInput)
