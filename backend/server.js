@@ -49,7 +49,7 @@ const createUserRef =
   Math.random().toString().slice(2, 7) +
   Math.random().toString(36).slice(7, 12); // auto generate ids
 
-  app.route("/api/user").post((req, res) => {
+app.route("/api/user").post((req, res) => {
   const getUser = User({
     username: req.body.username,
     email: req.body.email,
@@ -59,7 +59,7 @@ const createUserRef =
   // saves the user inputs
   getUser
     .save()
-    .then(res.send({ message: "Ok" }))
+    .then((response) => res.send({ condition: "Ok", message: response }))
     .catch((err) => res.json({ error: err }));
 });
 
@@ -85,8 +85,10 @@ app
 // Note main routes using chained method
 app.route("/api/note").post((req, res) => {
   const getNote = Note({
+    date: req.body.date,
     title: req.body.title,
     body: req.body.body,
+    ref: req.body.ref,
   });
   // saves the user notes
   getNote

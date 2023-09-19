@@ -66,7 +66,6 @@ function RegistrationForm() {
 
           // check between username and email, which one is in use
           if (userContent === null && getResponse.status === 200) {
-            
             let neededFormData = {
               username: formData.username,
               email: formData.email,
@@ -80,11 +79,15 @@ function RegistrationForm() {
                 neededFormData
               )
               .then(
-                // stores the user info for easy access
-                sessionStorage.setItem(
-                  "currentUser",
-                  JSON.stringify({ email: formData.email, ref: formData.ref })
-                ),
+                (userPost) =>
+                  // stores the user info for easy access
+                  sessionStorage.setItem(
+                    "currentUser",
+                    JSON.stringify({
+                      email: userPost.message.email,
+                      ref: userPost.message.ref,
+                    })
+                  ),
                 setFormData({
                   // resets the form
                   username: "",
