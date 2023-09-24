@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import WriteNote from "./pages/WriteNote";
 import EditNote from "./pages/EditNote";
+import Note from "./pages/Note";
 
 function App() {
   return (
@@ -16,8 +17,8 @@ function App() {
       <Route exact path="/signup" element={<Signup />} />
       <Route exact path="/dashboard" element={<Dashboard />} />
       <Route exact path="/writenote" element={<WriteNote />} />
-      <Route exact path="/editnote" element={<EditNote />} />
-
+      <Route exact path="/editnote/:id" element={<EditNote />} />
+      <Route exact path="/note/:id" element={<Note />} />
 
       {/* After building login page then we can import
             and uncomment below code ⬇

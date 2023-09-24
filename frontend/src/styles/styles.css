@@ -32,7 +32,7 @@ body {
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: .2rem 0;
+  padding: 0.2rem 0;
   align-items: center;
 }
 
@@ -223,7 +223,7 @@ body {
 /* Styling edit note page */
 .edit-note {
   width: 400px;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 20px;
   background: linear-gradient(to bottom, #bfc2eb, #d4d4e3);
   background-size: cover;
@@ -255,6 +255,24 @@ textarea {
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
+}
+
+/* View Note  */
+.view-main-note {
+  width: fit-content;
+  margin: 10px auto;
+  padding: 2rem;
+}
+
+.note-date {
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
+  padding-bottom: 1rem;
+}
+
+.note-body {
+  margin-top: 2rem;
 }
 
 /*sign-up form */
