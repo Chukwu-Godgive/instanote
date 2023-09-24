@@ -21,7 +21,7 @@ These are the things you can do with the api
 #### https://instanoteserver.onrender.com/api/user
 • Make a Post request
 
-#### https://instanoteserver.onrender.com/api/user/<email>
+#### https://instanoteserver.onrender.com/api/user/<_email>
 • Make a Get request
 
 • Make an Update request
@@ -43,7 +43,7 @@ These are the things you can do with the api
 
 ### <u>Notes</u>
 
-#### https://instanoteserver.onrender.com/api/notes/<ref>
+#### https://instanoteserver.onrender.com/api/notes/<_ref>
 • Make a Get request
 
 • Make a Delete request
