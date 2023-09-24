@@ -50,7 +50,12 @@ function WriteNote() {
 
   return (
     <div>
-      <GeneralNavbar pageDirectory="/dashboard" name_1="Notes" name_2="Write" />
+      <GeneralNavbar
+        pageDirectory="/dashboard"
+        name_1="Notes"
+        name_2="Write"
+        name_3="Logout"
+      />
       <div className="writeNote-container">
         <form onSubmit={handleSave}>
           <h1>Write a Note</h1>
