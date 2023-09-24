@@ -47,7 +47,7 @@ function Note() {
                   <p className="note-body">{note.body}</p>
 
                   <div style={action}>
-                    <Link style={linkStyle} to={`/editnote/${note.title}`}>
+                    <Link style={linkStyle} to={`/editnote/${note._id}`}>
                       <img
                         style={noteBoardAction}
                         src={Edit}
