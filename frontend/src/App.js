@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import WriteNote from "./pages/WriteNote";
 import EditNote from "./pages/EditNote";
 import Note from "./pages/Note";
+import Protected from "./components/Protected";
 
 function App() {
   return (
@@ -15,14 +16,15 @@ function App() {
       <Route exact path="/home" element={<Home />} />
       <Route exact path="/login" element={<Login />} />
       <Route exact path="/signup" element={<Signup />} />
-      <Route exact path="/dashboard" element={<Dashboard />} />
-      <Route exact path="/writenote" element={<WriteNote />} />
-      <Route exact path="/editnote/:id" element={<EditNote />} />
-      <Route exact path="/note/:id" element={<Note />} />
-
-      {/* After building login page then we can import
-            and uncomment below code ⬇
-        */}
+      
+      {/* protected */}
+      <Route exact element={<Protected />}>
+        <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route exact path="/note" element={<Dashboard />} />
+        <Route exact path="/writenote" element={<WriteNote />} />
+        <Route exact path="/editnote/:id" element={<EditNote />} />
+        <Route exact path="/note/:id" element={<Note />} />
+      </Route>
     </Routes>
   );
 }

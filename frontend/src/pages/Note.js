@@ -36,6 +36,7 @@ function Note() {
           pageDirectory="/dashboard"
           name_1="Notes"
           name_2="Write"
+          name_3="Logout"
         />
         <div className="view-note">
           <div className="container">

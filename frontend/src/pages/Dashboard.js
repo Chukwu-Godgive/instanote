@@ -62,10 +62,10 @@ const noteBody = {
   cursor: "pointer",
 };
 
-const linkStyle ={
+const linkStyle = {
   textDecoration: "none",
-  color: "inherit"
-}
+  color: "inherit",
+};
 
 const action = {
   float: "right",
@@ -90,12 +90,12 @@ function Dashboard() {
   // this gets the user info locally and online
   useEffect(() => {
     const getItemLocally = async () => {
-      const currentUser = JSON.parse(
-        sessionStorage.getItem("currentUser")
-      ); // gets the user stored email during login
+      const currentUser = JSON.parse(sessionStorage.getItem("currentUser")); // gets the user stored email during login
 
       await axios
-        .get("https://instanoteserver.onrender.com/api/user/" + currentUser.email)
+        .get(
+          "https://instanoteserver.onrender.com/api/user/" + currentUser.email
+        )
         .then((userResponse) => {
           setGetUser(userResponse.data); // stores the received info to the getUser state
         })
@@ -125,62 +125,77 @@ function Dashboard() {
 
   // handles note delete
   const handleDelete = async (e) => {
-    const {name} = e.target;
-    console.log(name)
+    const { name } = e.target;
+    console.log(name);
     await axios
       .delete("https://instanoteserver.onrender.com/api/note/" + name)
       .then((deleted) => {
         let del = deleted.data.deleted.deletedCount;
-        console.log(del)
+        console.log(del);
         if (del === 0) {
           window.location = "/dashboard";
         } else {
-          console.log("Try again")
+          console.log("Try again");
         }
       })
       .catch((deleteError) => {
         console.log(deleteError);
       });
-  }
+  };
 
   return (
     <div className="dashboard">
-
-      <GeneralNavbar pageDirectory="/dashboard" name_1="Notes" name_2="Write" />
+      <GeneralNavbar
+        pageDirectory="/dashboard"
+        name_1="Notes"
+        name_2="Write"
+        name_3="Logout"
+      />
 
       <div className="container">
-
         {/* We will use conditioning to determine if notes is available or not to know the design to display.
          */}
 
-        {userNotes.length ? ( <div>
-          <Link style={addNoteButton} to="/writenote">
-            <AddNoteButton />
-          </Link>
-        </div> ) : null}
+        {userNotes.length ? (
+          <div>
+            <Link style={addNoteButton} to="/writenote">
+              <AddNoteButton />
+            </Link>
+          </div>
+        ) : null}
 
         {/* We will map out the list of notes here using this list-of-notes below
-        */}
+         */}
 
         <div style={userNotes.length ? flexNotes : noFlexNotes}>
-          {userNotes.length ? (userNotes.map((note, idx) => (
-            <div style={noteBoard} key={idx}>
+          {userNotes.length ? (
+            userNotes.map((note, idx) => (
+              <div style={noteBoard} key={idx}>
+                <p style={noteDate}>{note.date}</p>
+                <h3 style={noteTitle}>
+                  <Link style={linkStyle} to={`/note/${note.title}`}>
+                    {note.title}
+                  </Link>
+                </h3>
+                <p style={noteBody}>
+                  <Link style={linkStyle} to={`/note/${note.title}`}>
+                    {note.body}
+                  </Link>
+                </p>
 
-              <p style={noteDate}>{note.date}</p>
-              <h3 style={noteTitle}><Link style={linkStyle} to={`/note/${note.title}`}>{note.title}</Link></h3>
-              <p style={noteBody}><Link style={linkStyle} to={`/note/${note.title}`}>{note.body}</Link></p>
-
-              <div style={action}>
-                <img style={noteBoardAction} src={Delete} name={note._id} onClick={handleDelete} alt="delete note" />
+                <div style={action}>
+                  <img
+                    style={noteBoardAction}
+                    src={Delete}
+                    name={note._id}
+                    onClick={handleDelete}
+                    alt="delete note"
+                  />
+                </div>
               </div>
-
-            </div>
             ))
-
           ) : (
-
             <div className="notes-unavailable">
-
               <div className="dashboard-notice">
                 <Notice message="Your notes will appear here when you create it." />
               </div>
@@ -190,9 +205,7 @@ function Dashboard() {
                   <AddNoteButton />
                 </Link>
               </div>
-
             </div>
-            
           )}
         </div>
       </div>
