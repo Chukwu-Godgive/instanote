@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Footer from "../components/Footer";
 import GeneralNavbar from "../components/Navbars/GeneralNavbar";
 import CustomButton from "../components/CustomButton";
+import popUp from "sweetalert2";
 import axios from "axios";
 
 function WriteNote() {
@@ -26,14 +27,21 @@ function WriteNote() {
   };
 
   // handles note submit and saving
-  
+
   const handleSave = async (e) => {
     e.preventDefault();
     await axios
       .post("https://instanoteserver.onrender.com/api/note", userInput)
       .then((noteResponse) => {
-        console.log(noteResponse.data)
-        console.log(userInput)
+        if (noteResponse.status === 200) {
+          popUp.fire({
+            icon: "success",
+            title: "Note added!",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          setUserInput({ title: "", body: "" });
+        }
       })
       .catch((noteError) => {
         console.log(noteError);
@@ -65,7 +73,9 @@ function WriteNote() {
               onChange={handleUserInput}
             />
           </div>
-          <button style={CustomButton} type="submit">Save</button>
+          <button style={CustomButton} type="submit">
+            Save
+          </button>
         </form>
       </div>
 

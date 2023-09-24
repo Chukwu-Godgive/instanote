@@ -62,6 +62,11 @@ const noteBody = {
   cursor: "pointer",
 };
 
+const linkStyle ={
+  textDecoration: "none",
+  color: "inherit"
+}
+
 const action = {
   float: "right",
 };
@@ -162,8 +167,8 @@ function Dashboard() {
             <div style={noteBoard} key={idx}>
 
               <p style={noteDate}>{note.date}</p>
-              <h3 style={noteTitle}>{note.title}</h3>
-              <p style={noteBody}>{note.body}</p>
+              <h3 style={noteTitle}><Link style={linkStyle} to={`/note/${note.title}`}>{note.title}</Link></h3>
+              <p style={noteBody}><Link style={linkStyle} to={`/note/${note.title}`}>{note.body}</Link></p>
 
               <div style={action}>
                 <img style={noteBoardAction} src={Delete} name={note._id} onClick={handleDelete} alt="delete note" />
