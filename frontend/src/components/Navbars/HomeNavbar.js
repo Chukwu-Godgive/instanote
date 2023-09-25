@@ -20,10 +20,10 @@ function HomeNavbar() {
           </div>
           <div className="menus">
             <ul>
-              <li>
+              <li className="menu1">
                 <Link to="/login">Login</Link>
               </li>
-              <li>
+              <li className="menu2">
                 <Link to="/signup">Signup</Link>
               </li>
             </ul>
