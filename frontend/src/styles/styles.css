@@ -16,7 +16,6 @@ body {
 }
 .nav,
 .hero-section {
-  /* background-color: rgb(14, 14, 14); */
   background-color: black;
 }
 
@@ -63,9 +62,10 @@ body {
 .hero-box {
   color: white;
   padding: 120px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background-image: url("../images/Home_Asset.png");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: right;
 }
 
 .home-title {
@@ -363,18 +363,9 @@ button[type="submit"]:hover {
 .notes-unavailable a {
   text-decoration: none;
 }
-
 /* All Dashboard end */
 
-/* 
-    Other pages designs can go here
-    Please remember to use this classNaming convention to avoid clash
-    e.g - if am working on About Page Title, i will be using something like
-     classNme="about-title"
-*/
-
 /* All Footer start */
-
 footer {
   background-color: #333;
   color: #fff;
@@ -386,5 +377,56 @@ footer {
 .footer-content {
   font-size: 16px;
 }
-
 /* All Footer end */
+
+/* Responsiveness  using Media Query */
+@media (max-width: 1024px) {
+  .hero-box {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.25)),
+      url("../images/Home_Asset.png");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: right;
+  }
+}
+
+@media (max-width: 849px) {
+  .menus ul {
+    flex-wrap: wrap;
+  }
+  .home-title {
+    width: 100%;
+  }
+  .home-main-desc {
+    width: 75%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-box {
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-contents {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2rem 0;
+    align-items: center;
+  }
+  .menus ul {
+    display: block;
+  }
+  .menus li {
+    padding-top: 20px;
+  }
+  .home-title {
+    font-size: 30px;
+  }
+  .home-main-desc {
+    width: 100%;
+  }
+}

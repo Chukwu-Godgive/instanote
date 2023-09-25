@@ -1,7 +1,6 @@
 // Home handles all the contents of the landing page
 import React from "react";
 import HomeNavbar from "../components/Navbars/HomeNavbar";
-import HomeAsset from "../images/Home_Asset.png";
 import Button from "../components/GetStartedButton";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
@@ -37,10 +36,6 @@ function Home() {
               <Link to="/signup">
                 <Button style={buttonStyle} buttonName="Get Started" />
               </Link>
-            </div>
-
-            <div>
-              <img src={HomeAsset} alt="instanote asset" />
             </div>
           </div>
         </div>

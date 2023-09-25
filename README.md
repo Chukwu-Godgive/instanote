@@ -4,6 +4,8 @@ Instant note app that helps you write and store your notes in one place.
 
 ### [View Site](https://instanote.onrender.com)
 
+[<img src="./frontend//src/images/instanote_.png" alt="instanote" />](https://instanote.onrender.com)
+
 ### Contribution
 
 To contribute, first fork the project and solve the issue you found, then make a pull request.
